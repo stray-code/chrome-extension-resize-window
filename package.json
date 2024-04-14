@@ -12,9 +12,15 @@
     "format": "prettier -w src"
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["npm run format", "npm run lint:fix"]
+    "*.{ts,tsx}": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
   },
   "dependencies": {
+    "@mantine/core": "^7.8.0",
+    "@mantine/form": "^7.8.0",
+    "@mantine/hooks": "^7.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
