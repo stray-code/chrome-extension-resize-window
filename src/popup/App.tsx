@@ -64,7 +64,7 @@ function App() {
           {windowSize.height}
         </Button>
       ))}
-      <Divider my={5} />
+      {windowSizeList.length > 0 && <Divider my={5} />}
       {defaultWindowSizeList.map((windowSize, index) => (
         <Button
           key={index}
