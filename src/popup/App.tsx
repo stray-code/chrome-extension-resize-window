@@ -4,6 +4,7 @@ import { useForm } from "@mantine/form";
 
 import { WindowSize } from "../types";
 import { defaultWindowSizeList } from "./defaultWindowSizeList";
+import { getLocalStorage } from "../utils";
 
 function App() {
   const [windowSizeList, setWindowSizeList] = useState<WindowSize[]>([]);
@@ -22,13 +23,15 @@ function App() {
   });
 
   useEffect(() => {
-    chrome.storage.local.get(["WINDOW_SIZE"], (value) => {
-      if (!value?.WINDOW_SIZE) {
+    (async () => {
+      const windowSizeList = await getLocalStorage("windowSizeList");
+
+      if (!windowSizeList) {
         return;
       }
 
-      setWindowSizeList(value.WINDOW_SIZE);
-    });
+      setWindowSizeList(windowSizeList);
+    })();
   }, []);
 
   const resizeWindow = (updateInfo: chrome.windows.UpdateInfo) => {

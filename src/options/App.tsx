@@ -12,6 +12,7 @@ import {
 
 import { WindowSize } from "../types";
 import { useForm } from "@mantine/form";
+import { getLocalStorage, setLocalStorage } from "../utils";
 
 function App() {
   const [windowSizeList, setWindowSizeList] = useState<WindowSize[]>([]);
@@ -30,13 +31,15 @@ function App() {
   });
 
   useEffect(() => {
-    chrome.storage.local.get(["WINDOW_SIZE"], (value) => {
-      if (!value?.WINDOW_SIZE) {
+    (async () => {
+      const windowSizeList = await getLocalStorage("windowSizeList");
+
+      if (!windowSizeList) {
         return;
       }
 
-      setWindowSizeList(value.WINDOW_SIZE);
-    });
+      setWindowSizeList(windowSizeList);
+    })();
   }, []);
 
   return (
@@ -47,7 +50,7 @@ function App() {
           モニタを超えるサイズは動作しないためご注意ください。
         </Text>
         <form
-          onSubmit={form.onSubmit((values) => {
+          onSubmit={form.onSubmit(async (values) => {
             if (!(values.width > 0 && values.height > 0)) {
               alert("１以上の整数を入力してください。");
               return;
@@ -57,7 +60,7 @@ function App() {
 
             setWindowSizeList(newWindowSizeList);
 
-            chrome.storage.local.set({ WINDOW_SIZE: newWindowSizeList });
+            await setLocalStorage("windowSizeList", newWindowSizeList);
 
             form.reset();
           })}
@@ -104,7 +107,7 @@ function App() {
                 <Button
                   variant="subtle"
                   color="red"
-                  onClick={() => {
+                  onClick={async () => {
                     const result = confirm("削除してもよろしいですか？");
 
                     if (!result) {
@@ -117,9 +120,7 @@ function App() {
 
                     setWindowSizeList(newWindowSizeList);
 
-                    chrome.storage.local.set({
-                      WINDOW_SIZE: newWindowSizeList,
-                    });
+                    await setLocalStorage("windowSizeList", newWindowSizeList);
                   }}
                 >
                   削除
