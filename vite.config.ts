@@ -6,7 +6,7 @@ const manifest = defineManifest({
   manifest_version: 3,
   name: "ウィンドウサイズ変更",
   description: "ワンクリックでウィンドウサイズ（画面サイズ）を変更できます。",
-  version: "1.0.0",
+  version: "1.0.1",
   icons: {
     16: "img/icon16.png",
     48: "img/icon48.png",
