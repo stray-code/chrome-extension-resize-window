@@ -100,7 +100,7 @@ function App() {
         </Table.Thead>
         <Table.Tbody>
           {windowSizeList.map((windowSize, index) => (
-            <Table.Tr>
+            <Table.Tr key={index}>
               <Table.Td>{windowSize.width}</Table.Td>
               <Table.Td>{windowSize.height}</Table.Td>
               <Table.Td>
