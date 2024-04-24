@@ -1,6 +1,5 @@
+import { WindowSize } from "./windowSize";
+
 export type LocalStorageItems = {
-  windowSizeList: {
-    width: number;
-    height: number;
-  }[];
+  windowSizeList: WindowSize[];
 };
