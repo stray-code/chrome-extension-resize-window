@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
 import { crx, defineManifest } from "@crxjs/vite-plugin";
 
 const manifest = defineManifest({
@@ -13,11 +13,10 @@ const manifest = defineManifest({
     128: "img/icon128.png",
   },
   action: {
-    default_icon: "img/icon16.png",
     default_popup: "src/popup/index.html",
   },
-  options_page: 'src/options/index.html',
-  permissions: ['storage'],
+  options_page: "src/options/index.html",
+  permissions: ["storage"],
 });
 
 // https://vitejs.dev/config/
@@ -30,4 +29,4 @@ export default defineConfig({
       port: 5173,
     },
   },
-})
+});
