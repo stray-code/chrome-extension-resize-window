@@ -27,8 +27,8 @@ function App() {
     },
     transformValues: (values) => {
       return {
-        width: Math.floor(+values.width),
-        height: Math.floor(+values.height),
+        width: +values.width,
+        height: +values.height,
       };
     },
     validateInputOnBlur: true,
@@ -36,9 +36,11 @@ function App() {
       z.object({
         width: z.coerce
           .number({ message: "整数を入力してください" })
+          .int()
           .min(1, { message: "1以上の整数を入力してください" }),
         height: z.coerce
           .number({ message: "整数を入力してください" })
+          .int()
           .min(1, { message: "1以上の整数を入力してください" }),
       }),
     ),
