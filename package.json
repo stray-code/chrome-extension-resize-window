@@ -6,15 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "format": "prettier -w src",
     "prepare": "husky",
-    "check": "biome check --apply ."
+    "check": "biome check --apply .",
+    "tsc": "tsc --skipLibCheck --noEmit"
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["npm run format", "npm run lint:fix"]
+    "*.{ts,tsx}": [
+      "bash -c \"npm run tsc\"",
+      "bash -c \"npm run check\""
+    ]
   },
   "dependencies": {
     "@mantine/core": "^7.8.0",
@@ -29,16 +30,9 @@
     "@types/chrome": "^0.0.266",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   }
