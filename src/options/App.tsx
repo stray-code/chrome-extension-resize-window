@@ -1,8 +1,10 @@
 import {
+  Box,
   Button,
   Container,
-  Flex,
   Paper,
+  SimpleGrid,
+  Stack,
   Table,
   Text,
   TextInput,
@@ -45,10 +47,7 @@ function App() {
   return (
     <Container py="xl" size="xs">
       <Title order={3}>ウィンドウサイズ設定</Title>
-      <Paper mt="xl" p="md" shadow="sm" withBorder>
-        <Text mb="md" size="sm" c="gray">
-          モニタを超えるサイズは動作しないためご注意ください。
-        </Text>
+      <Paper mt="xl" p="md" shadow="md" withBorder>
         <form
           onSubmit={form.onSubmit(async (values) => {
             if (!(values.width > 0 && values.height > 0)) {
@@ -65,29 +64,26 @@ function App() {
             form.reset();
           })}
         >
-          <Flex gap="xs" align="flex-end">
-            <TextInput
-              {...form.getInputProps("width")}
-              label="横幅"
-              placeholder="1200"
-              styles={{
-                root: {
-                  flexGrow: 1,
-                },
-              }}
-            />
-            <TextInput
-              {...form.getInputProps("height")}
-              label="縦幅"
-              placeholder="800"
-              styles={{
-                root: {
-                  flexGrow: 1,
-                },
-              }}
-            />
-            <Button type="submit">登録</Button>
-          </Flex>
+          <Stack>
+            <Text size="sm" c="gray">
+              モニタを超えるサイズは動作しないためご注意ください。
+            </Text>
+            <SimpleGrid cols={2}>
+              <TextInput
+                {...form.getInputProps("width")}
+                label="横幅"
+                placeholder="1200"
+              />
+              <TextInput
+                {...form.getInputProps("height")}
+                label="縦幅"
+                placeholder="800"
+              />
+            </SimpleGrid>
+            <Box>
+              <Button type="submit">登録</Button>
+            </Box>
+          </Stack>
         </form>
       </Paper>
       <Table mt="xl">
