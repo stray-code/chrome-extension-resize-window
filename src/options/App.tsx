@@ -12,7 +12,8 @@ import {
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 
-import { useForm } from "@mantine/form";
+import { useForm, zodResolver } from "@mantine/form";
+import { z } from "zod";
 import type { WindowSize } from "../types";
 import { getLocalStorage, setLocalStorage } from "../utils";
 
@@ -30,6 +31,17 @@ function App() {
         height: Math.floor(+values.height),
       };
     },
+    validateInputOnBlur: true,
+    validate: zodResolver(
+      z.object({
+        width: z.coerce
+          .number({ message: "整数を入力してください" })
+          .min(1, { message: "1以上の整数を入力してください" }),
+        height: z.coerce
+          .number({ message: "整数を入力してください" })
+          .min(1, { message: "1以上の整数を入力してください" }),
+      }),
+    ),
   });
 
   useEffect(() => {
@@ -50,11 +62,6 @@ function App() {
       <Paper mt="xl" p="md" shadow="md" withBorder>
         <form
           onSubmit={form.onSubmit(async (values) => {
-            if (!(values.width > 0 && values.height > 0)) {
-              alert("１以上の整数を入力してください。");
-              return;
-            }
-
             const newWindowSizeList = [...windowSizeList, values];
 
             setWindowSizeList(newWindowSizeList);
