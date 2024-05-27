@@ -37,11 +37,11 @@ function App() {
         width: z.coerce
           .number({ message: "整数を入力してください" })
           .int()
-          .min(1, { message: "1以上の整数を入力してください" }),
+          .positive({ message: "1以上の整数を入力してください" }),
         height: z.coerce
           .number({ message: "整数を入力してください" })
           .int()
-          .min(1, { message: "1以上の整数を入力してください" }),
+          .positive({ message: "1以上の整数を入力してください" }),
       }),
     ),
   });
