@@ -1,4 +1,4 @@
-import { WindowSize } from "../types";
+import type { WindowSize } from "../types";
 
 export const defaultWindowSizeList: WindowSize[] = [
   {

@@ -1,4 +1,4 @@
-import { WindowSize } from "./windowSize";
+import type { WindowSize } from "./windowSize";
 
 export type LocalStorageItems = {
   windowSizeList: WindowSize[];

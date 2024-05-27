@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
 import { Box, Button, Divider, Flex, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { useEffect, useState } from "react";
 
-import { WindowSize } from "../types";
-import { defaultWindowSizeList } from "./defaultWindowSizeList";
+import type { WindowSize } from "../types";
 import { getLocalStorage } from "../utils";
+import { defaultWindowSizeList } from "./defaultWindowSizeList";
 
 function App() {
   const [windowSizeList, setWindowSizeList] = useState<WindowSize[]>([]);

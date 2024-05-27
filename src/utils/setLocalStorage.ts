@@ -1,4 +1,4 @@
-import { LocalStorageItems } from "../types";
+import type { LocalStorageItems } from "../types";
 
 type Values<T> = T extends "windowSizeList"
   ? LocalStorageItems["windowSizeList"]

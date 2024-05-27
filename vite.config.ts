@@ -1,6 +1,6 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
 import { crx, defineManifest } from "@crxjs/vite-plugin";
+import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
 
 const manifest = defineManifest({
   manifest_version: 3,

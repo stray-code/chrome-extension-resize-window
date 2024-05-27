@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
 import {
   Button,
-  Flex,
-  TextInput,
   Container,
-  Title,
+  Flex,
   Paper,
   Table,
   Text,
+  TextInput,
+  Title,
 } from "@mantine/core";
+import { useEffect, useState } from "react";
 
-import { WindowSize } from "../types";
 import { useForm } from "@mantine/form";
+import type { WindowSize } from "../types";
 import { getLocalStorage, setLocalStorage } from "../utils";
 
 function App() {
@@ -95,7 +95,7 @@ function App() {
           <Table.Tr>
             <Table.Th>横幅</Table.Th>
             <Table.Th>縦幅</Table.Th>
-            <Table.Th w={0}></Table.Th>
+            <Table.Th w={0} />
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>
