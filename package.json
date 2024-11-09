@@ -12,7 +12,10 @@
     "tsc": "tsc --skipLibCheck --noEmit"
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["bash -c \"npm run tsc\"", "bash -c \"npm run check\""]
+    "*.{ts,tsx}": [
+      "bash -c \"npm run tsc\"",
+      "bash -c \"npm run check\""
+    ]
   },
   "dependencies": {
     "@mantine/core": "^7.8.0",
@@ -24,7 +27,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
-    "@crxjs/vite-plugin": "^2.0.0-beta.23",
+    "@crxjs/vite-plugin": "^2.0.0-beta.28",
     "@types/chrome": "^0.0.266",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
@@ -32,6 +35,6 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "vite": "^5.4.10"
   }
 }
