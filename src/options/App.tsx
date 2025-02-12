@@ -1,7 +1,8 @@
 import {
-  Box,
+  Anchor,
   Button,
   Container,
+  Group,
   Paper,
   SimpleGrid,
   Stack,
@@ -90,9 +91,16 @@ function App() {
                   placeholder="800"
                 />
               </SimpleGrid>
-              <Box>
+              <Group justify="space-between">
                 <Button type="submit">登録</Button>
-              </Box>
+                <Anchor
+                  href="https://docs.google.com/forms/d/19VD2ZppbKEcfKzv-aeOkUrv47vdCQqrrk2Tk540qov8/edit?hl=ja"
+                  target="_blank"
+                  size="sm"
+                >
+                  アンケート
+                </Anchor>
+              </Group>
             </Stack>
           </form>
         </Paper>
