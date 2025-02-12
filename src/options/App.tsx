@@ -94,7 +94,7 @@ function App() {
               <Group justify="space-between">
                 <Button type="submit">登録</Button>
                 <Anchor
-                  href="https://docs.google.com/forms/d/19VD2ZppbKEcfKzv-aeOkUrv47vdCQqrrk2Tk540qov8/edit?hl=ja"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdj4ZEJvxDWwriXX7Bp52xMNYUQ4w2rGY7gWx8V395JelUL0A/viewform?usp=header"
                   target="_blank"
                   size="sm"
                 >
