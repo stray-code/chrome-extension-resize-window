@@ -1,5 +1,4 @@
 import {
-  Anchor,
   Button,
   Container,
   Group,
@@ -93,13 +92,6 @@ function App() {
               </SimpleGrid>
               <Group justify="space-between">
                 <Button type="submit">登録</Button>
-                <Anchor
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdj4ZEJvxDWwriXX7Bp52xMNYUQ4w2rGY7gWx8V395JelUL0A/viewform?usp=header"
-                  target="_blank"
-                  size="sm"
-                >
-                  アンケート
-                </Anchor>
               </Group>
             </Stack>
           </form>
