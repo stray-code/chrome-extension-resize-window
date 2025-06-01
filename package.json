@@ -12,7 +12,7 @@
     "tsc": "tsc --skipLibCheck --noEmit"
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["bash -c \"npm run tsc\"", "bash -c \"npm run check\""]
+    "*.{ts,tsx}": ["bash -c \"bun run tsc\"", "bash -c \"bun run check\""]
   },
   "dependencies": {
     "@mantine/core": "^7.8.0",
