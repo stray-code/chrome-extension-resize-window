@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "prepare": "husky",
-    "check": "biome check --apply .",
+    "check": "biome check --write .",
     "tsc": "tsc --skipLibCheck --noEmit"
   },
   "lint-staged": {
